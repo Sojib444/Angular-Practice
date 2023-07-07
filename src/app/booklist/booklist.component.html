@@ -1,0 +1,24 @@
+<p>There is some book in my store</p>
+
+<div *ngFor="let item of books">
+    <div  class="d-flex">
+        <ul>
+            <li style="color: cadetblue; font-weight: bold;" [textContent]="item.name"> </li>
+        </ul>
+        
+        <div *ngIf="item.description">
+            <p class="ms-2">{{item.description}} </p>
+        </div>
+
+        <div *ngIf="item.description === null">
+            <p class="ms-2">There is no description</p>
+        </div>
+    </div>
+
+    <div class="d-flex">
+        <button class="btn btn-warning ms-5 mb-4" (click)="Shared()">Share</button>
+        <app-product-alert [product]="item" (notify)="onNotify()"></app-product-alert>
+    </div>
+</div>
+
+
