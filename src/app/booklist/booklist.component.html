@@ -3,7 +3,7 @@
 <div *ngFor="let item of books">
     <div  class="d-flex">
         <ul>
-            <li style="color: cadetblue; font-weight: bold;" [textContent]="item.name"> </li>
+            <li> <a  style="color: cadetblue; font-weight: bold; text-decoration: none;" [routerLink]="['/products',item.name]"> {{item.name}} </a> </li>
         </ul>
         
         <div *ngIf="item.description">
