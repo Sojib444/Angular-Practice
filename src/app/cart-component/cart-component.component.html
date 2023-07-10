@@ -1,0 +1,14 @@
+<div *ngIf="items && !null;else noitem">
+    <div *ngFor="let item of items">
+        <ol>
+            <li>
+                <h4>{{item.name}} </h4>
+                <p>{{item.description}}</p>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<ng-template #noitem>
+    <p>There is no item in your cart</p>
+</ng-template>
