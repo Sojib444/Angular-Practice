@@ -8,11 +8,13 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { RouterModule } from "@angular/router";
 import { ServiceCartComponent } from './service-cart/service-cart.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations:[AppComponent, BookComponent, BooklistComponent, ProductAlertComponent, ProductDetailsComponent, ServiceCartComponent, CartComponentComponent],
     
     imports:[
+    HttpClientModule,
     BrowserModule ,
     RouterModule.forRoot([
         {path:'',component:BooklistComponent},
@@ -20,7 +22,7 @@ import { CartComponentComponent } from './cart-component/cart-component.componen
         {path:'cart',component:CartComponentComponent}
     ])],
 
-    providers:[ServiceCartComponent],
+    providers:[ServiceCartComponent,HttpClient],
 
     bootstrap:[AppComponent]
 })

@@ -9,9 +9,10 @@ import { ServiceCartComponent } from '../service-cart/service-cart.component';
 export class CartComponentComponent {
 
   items = this.cartService.getItems();
+  api = this.cartService.getShipingPrices();
   
   constructor(private cartService:ServiceCartComponent)
   {
-
+      
   }
 }

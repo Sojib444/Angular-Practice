@@ -1,14 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Product } from '../Model/Products';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-service-cart',
   templateUrl: './service-cart.component.html',
   styleUrls: ['./service-cart.component.css']
 })
+
+@Injectable({
+  providedIn: 'root'
+})
+
 export class ServiceCartComponent {
 
   products:Product[] = [];
+
+  constructor(private http: HttpClient)
+  {
+
+  }
 
   //Add to cart
   addToCart(product:Product)
@@ -27,6 +38,18 @@ export class ServiceCartComponent {
   {
     this.products = [];
     return this.products;
+  }
+
+  getShipingPrices()
+  {
+    let json = this.http.get("https://www.boredapi.com/api/activity").subscribe(
+      response=>{
+        console.log(response);
+      }
+    );
+
+    json.unsubscribe()
+    console.log(json);
   }
 
 }
