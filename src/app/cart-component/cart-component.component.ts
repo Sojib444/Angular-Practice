@@ -10,6 +10,7 @@ export class CartComponentComponent {
 
   items = this.cartService.getItems();
   api = this.cartService.getShipingPrices();
+  josn= this.cartService.getShipingJsonData();
   
   constructor(private cartService:ServiceCartComponent)
   {

@@ -1,0 +1,8 @@
+{
+    "shipingCharge":{
+        "OneDay": 20,
+        "TwoDay": 50,
+        "ThreeDay": 100,
+        "Week": 150
+    }
+}

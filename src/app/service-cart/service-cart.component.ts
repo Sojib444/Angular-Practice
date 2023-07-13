@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component} from '@angular/core';
 import { Product } from '../Model/Products';
 import { HttpClient } from '@angular/common/http';
 
@@ -6,10 +6,6 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-service-cart',
   templateUrl: './service-cart.component.html',
   styleUrls: ['./service-cart.component.css']
-})
-
-@Injectable({
-  providedIn: 'root'
 })
 
 export class ServiceCartComponent {
@@ -50,6 +46,12 @@ export class ServiceCartComponent {
 
     json.unsubscribe()
     console.log(json);
+  }
+
+  getShipingJsonData()
+  {
+    let getLocalJson = this.http.get<{Day:String, Price:Number}[]>("/assets/shiping.json");
+    return getLocalJson;
   }
 
 }
