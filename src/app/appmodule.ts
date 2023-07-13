@@ -9,17 +9,19 @@ import { RouterModule } from "@angular/router";
 import { ServiceCartComponent } from './service-cart/service-cart.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { ShipingComponent } from './siping/shiping.component';
 
 @NgModule({
-    declarations:[AppComponent, BookComponent, BooklistComponent, ProductAlertComponent, ProductDetailsComponent, ServiceCartComponent, CartComponentComponent],
-    
+    declarations:[AppComponent, BookComponent, BooklistComponent, ProductAlertComponent,
+         ProductDetailsComponent, ServiceCartComponent, CartComponentComponent, ShipingComponent],
     imports:[
     HttpClientModule,
     BrowserModule ,
     RouterModule.forRoot([
         {path:'',component:BooklistComponent},
         {path:'products/:name',component:ProductDetailsComponent},
-        {path:'cart',component:CartComponentComponent}
+        {path:'cart',component:CartComponentComponent},
+        {path:'shiping',component:ShipingComponent},
     ])],
 
     providers:[ServiceCartComponent,HttpClient],
