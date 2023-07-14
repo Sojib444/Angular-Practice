@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ShipingComponent implements OnInit{
 
-  shipingCost?:Observable<{Day:String,Price:Number}[]>;
+  shipingCost$?:Observable<any[]>;
 
   constructor(private service:ServiceCartComponent)
   {
@@ -17,6 +17,6 @@ export class ShipingComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.shipingCost = this.service.getShipingJsonData();
+    this.shipingCost$ = this.service.getShipingJsonData();
   }
 }

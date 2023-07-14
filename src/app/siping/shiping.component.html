@@ -1,1 +1,7 @@
-<p>siping works!</p>
+
+<h3>Shipoing Component</h3>
+
+<div *ngFor="let shiping of shipingCost$ | async |keyvalue">
+    <span>{{shiping.value.Day}}</span>
+    <span>{{shiping.value.Price}}</span>
+</div>
