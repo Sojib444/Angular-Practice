@@ -18,5 +18,6 @@ export class ShipingComponent implements OnInit{
 
   ngOnInit(): void {
     this.shipingCost$ = this.service.getShipingJsonData();
+    console.log(this.shipingCost$);
   }
 }

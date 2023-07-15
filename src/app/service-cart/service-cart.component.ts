@@ -50,7 +50,7 @@ export class ServiceCartComponent {
 
   getShipingJsonData()
   {
-    let getLocalJson = this.http.get<{Day:String, Price:Number}[]>("/assets/shiping.json");
+    let getLocalJson = this.http.get<{type:String, price:Number}[]>("/assets/shiping.json");
     return getLocalJson;
   }
 

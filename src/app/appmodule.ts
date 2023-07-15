@@ -10,6 +10,7 @@ import { ServiceCartComponent } from './service-cart/service-cart.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { ShipingComponent } from './siping/shiping.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[AppComponent, BookComponent, BooklistComponent, ProductAlertComponent,
@@ -17,6 +18,7 @@ import { ShipingComponent } from './siping/shiping.component';
     imports:[
     HttpClientModule,
     BrowserModule ,
+    ReactiveFormsModule,
     RouterModule.forRoot([
         {path:'',component:BooklistComponent},
         {path:'products/:name',component:ProductDetailsComponent},

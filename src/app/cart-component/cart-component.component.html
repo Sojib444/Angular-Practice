@@ -4,6 +4,7 @@
             <li>
                 <h4>{{item.name}} </h4>
                 <p>{{item.description}}</p>
+                <button class="btn btn-success" routerLink="/shiping">Shiping</button>
             </li>
         </ol>
     </div>
@@ -12,4 +13,22 @@
 <ng-template #noitem>
     <p>There is no item in your cart</p>
 </ng-template>
+
+<form  [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+    
+      <div>
+        <label for="address">
+          Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+    
+      <button class="button" type="submit">Purchase</button>  
+</form>
 

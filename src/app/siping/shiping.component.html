@@ -2,6 +2,6 @@
 <h3>Shipoing Component</h3>
 
 <div *ngFor="let shiping of shipingCost$ | async |keyvalue">
-    <span>{{shiping.value.Day}}</span>
-    <span>{{shiping.value.Price}}</span>
+    <span>{{shiping.value.type}}  </span>
+    <span>{{shiping.value.price | currency}}</span>
 </div>
