@@ -11,10 +11,11 @@ import { CartComponentComponent } from './cart-component/cart-component.componen
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { ShipingComponent } from './siping/shiping.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { NgOnchangeExComponent } from './ng-onchange-ex/ng-onchange-ex.component';
 
 @NgModule({
     declarations:[AppComponent, BookComponent, BooklistComponent, ProductAlertComponent,
-         ProductDetailsComponent, ServiceCartComponent, CartComponentComponent, ShipingComponent],
+         ProductDetailsComponent, ServiceCartComponent, CartComponentComponent, ShipingComponent, NgOnchangeExComponent],
     imports:[
     HttpClientModule,
     BrowserModule ,
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from "@angular/forms";
         {path:'products/:name',component:ProductDetailsComponent},
         {path:'cart',component:CartComponentComponent},
         {path:'shiping',component:ShipingComponent},
+        {path:'ngonchanges', component:NgOnchangeExComponent}
     ])],
 
     providers:[ServiceCartComponent,HttpClient],
@@ -31,6 +33,6 @@ import { ReactiveFormsModule } from "@angular/forms";
     bootstrap:[AppComponent]
 })
 
-export class AppModule{
+export class AppModule{ 
     
 } 

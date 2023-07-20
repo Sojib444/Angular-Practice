@@ -7,6 +7,8 @@ import { Product } from '../Model/Products';
   styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent {
+  
+  //For booklist
     books:Product[] = [{name:"C#",description:"This book is written by Jalal Sir",Price: 701},
                        {name:"Javascript",description:"This is also known as toy language",Price:600},
                        {name:"Kotlin",description:null,Price:700},
@@ -20,5 +22,14 @@ export class BooklistComponent {
     onNotify()
     {
       window.alert("You are notify from child component");
+    }
+
+
+    //for component life cycle hook;
+    schoolName?:String = "Rajapur High School Ntore";
+
+    onchange()
+    {
+      this.schoolName = "Muladuli High School";
     }
 }
